@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Party-in-a-Box 🎉</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f6;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff4da6;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎉 Party-in-a-Box</h1>
+<p>Pick a theme and get your party plan 💖</p>
+
+<select id="theme">
+  <option value="">-- Choose Theme --</option>
+  <option value="barbie">Barbie Beach</option>
+  <option value="princess">Princess Party</option>
+</select>
+
+<br>
+
+<button onclick="generate()">Get My Plan ✨</button>
+
+<div id="output"></div>
+
+<script>
+function generate() {
+  const theme = document.getElementById("theme").value;
+  const output = document.getElementById("output");
+
+  if (!theme) {
+    output.innerHTML = "<p>Please pick a theme first 💕</p>";
+    return;
+  }
+
+  if (theme === "barbie") {
+    output.innerHTML = `
+      <div class="card">
+        <h2>💖 Barbie Beach Party</h2>
+
+        <h3>🛍️ Shopping List</h3>
+        <ul>
+          <li>Pink tablecloth</li>
+          <li>Plastic flamingos</li>
+          <li>Balloons (pink & white)</li>
+          <li>Beach balls</li>
+        </ul>
+
+        <h3>🎀 Decor Ideas</h3>
+        <p>Set up a pink beach vibe with balloons and flamingos. Use towels as seating!</p>
+
+        <h3>🛠️ Setup Steps</h3>
+        <ol>
+          <li>Lay tablecloth</li>
+          <li>Blow up balloons</li>
+          <li>Place flamingos around area</li>
+          <li>Add beach toys for kids</li>
+        </ol>
+      </div>
+    `;
+  }
+
+  if (theme === "princess") {
+    output.innerHTML = `
+      <div class="card">
+        <h2>👑 Princess Party</h2>
+
+        <h3>🛍️ Shopping List</h3>
+        <ul>
+          <li>Tiaras</li>
+          <li>Pink & gold decorations</li>
+          <li>Tablecloth</li>
+          <li>Cupcake stand</li>
+        </ul>
+
+        <h3>🎀 Decor Ideas</h3>
+        <p>Create a royal vibe with gold accents and sparkles.</p>
+
+        <h3>🛠️ Setup Steps</h3>
+        <ol>
+          <li>Decorate table</li>
+          <li>Set up throne chair</li>
+          <li>Arrange cupcakes</li>
+          <li>Hand out tiaras</li>
+        </ol>
+      </div>
+    `;
+  }
+}
+</script>
+
+</body>
+</html>
